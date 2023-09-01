@@ -39,12 +39,21 @@ const getDetails = async (categories) => {
         nullContainer.appendChild(div)
     }
     wholeData.forEach((data) => {
-       const div = document.createElement('div');
-       div.innerHTML = `
-       <figure><img class="w-full md:h-[200px] lg:h-[250px] rounded-lg" src="${data?.thumbnail}" alt="Shoes" /></figure>
+        const getSeconds = data.others.posted_date;
+        const hours = parseInt(getSeconds / 3600);
+        const remainingSeconds = getSeconds % 3600;
+        const minutes = parseInt(remainingSeconds / 60);
+        if(hours === 0 && minutes === 0){
+            
+        }
+        console.log(hours, minutes)
+        const div = document.createElement('div');
+       div.innerHTML = ` 
+      <img class="w-full md:h-[200px] lg:h-[250px] rounded-lg relative" src="${data?.thumbnail}" alt="Shoes" />
        <div class="flex gap-2 items-center mt-5">
        <img class="w-[40px] rounded-full" src="${data?.authors[0]?.profile_picture}" />
          <p class="font-bold text-[#171717]"> ${data?.title} </p>
+         <p class="absolute ml-32 mb-32 lg:ml-56 lg:mb-40 bg-[#171717] text-white rounded-lg px-0 py-0 md:px-2 md:py-1"> ${hours}hrs ${minutes}min ago</p>
        </div>
        <div class="flex my-3 gap-2"
        <h3 class="text-[#171717B3] text-sm"> ${data?.authors[0]?.profile_name} </h3>
