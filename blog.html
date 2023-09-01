@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog Questions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        .inter-font{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/36edbde8e9.js" crossorigin="anonymous"></script>    
 </head>
 <body>
-    <h1>
-        hi
-    </h1>
+    <h1 class="text-6xl text-center font-bold my-5">Blog Questions</h1>
+    <section class="container mx-auto my-20">
+            <h1 class="text-4xl font-semibold"><span class="bg-[#EB5757] p-1 text-white rounded-xl">Question</span> : Discuss the scope of var, let, and const</h1>
+            <p class="text-2xl font-medium my-5"><span class="underline text-3xl font-semibold px-5">VAR:</span>
+                <li class="text-2xl font-medium my-3">Var is a function scope. Function scope means if a variable is declared using var keyword, it will be accessible throughout the function. var can be redeclared and reassign also.</li>
+            </p>
+            <p class="text-2xl font-medium my-5"><span class="underline text-3xl font-semibold px-5">Let and Const:</span><br>
+                <li class="text-2xl font-medium my-3">
+                    let $ const are block scope. Block scope means if variables declared using let $ const keyword, they are accessible within that particular block. Let can be reassign but can't declare it twice. Const cannot be redeclared and reassign.
+                </li></p>
+        <div class="space-y-5 my-20">
+            <h1 class="text-4xl font-semibold"><span class="bg-[#EB5757] p-1 text-white rounded-xl">Question</span> : Tell us the use cases of null and undefined</h1>
+                <p class="text-2xl font-medium"><span class="underline text-3xl font-semibold px-5">null:</span>
+                    <li class="text-2xl font-medium my-3">Null is a type of object. Null is used for missing or unavailable data. if a variable has no value (let sum;) then we can use null. example : (let sum = null);</li>
+                    <li class="text-2xl font-medium my-3">We can reset or clear a variable using null. Example: (let total = 10); (total = null) </li>
+                </p>
+            <p class="text-2xl font-medium"><span class="underline text-3xl font-semibold px-5">undefined:</span>
+                <li class="text-2xl font-medium my-3">we can use undefined to check if a property exists or set optional properties.</li>
+                    <li class="text-2xl font-medium my-3">we can use undefined to represent missing or undefined values in an array.</li>
+            </p>
+        </div>
+        <div class="space-y-5 my-20">
+            <h1 class="text-4xl font-semibold"><span class="bg-[#EB5757] p-1 text-white rounded-xl">Question</span> : What do you mean by REST API?</h1>
+                <p class="text-2xl font-medium"><span class="underline text-3xl font-semibold px-5">Ans:</span> 
+                    REST API use standard HTTP methods to perform actions on resources:
+                    <li class="text-2xl font-medium my-3">GET: Retrieve data from the server.</li>
+                    <li class="text-2xl font-medium my-3">POST: Create a new resource on the server.</li>
+                    <li class="text-2xl font-medium my-3">PUT: Update an existing resource or create a new one if it doesn't exist.</li>
+                    <li class="text-2xl font-medium my-3">DELETE: Remove a resource from the server.</li>
+                    <li class="text-2xl font-medium my-3">PATCH: Partially update a resource.</li>
+                </p>
+        </div>
+    </section>
 </body>
 </html>
