@@ -16,10 +16,26 @@ const clickFunction = (allCategory) => {
     })
 }
 
-const getDetails = async (categories) => {
+let searchId = 1000;
+const getDetails = async (categories, isTrue) => {
     const resp = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categories}`);
     const data = await resp.json();
     const wholeData = data.data;
+    console.log(wholeData)
+    searchId = categories;
+    console.log(categories, isTrue);
+        if(isTrue){
+            wholeData.sort(function(a,b){
+                let x = a.others.views;
+                let y = b.others.views;
+                let c = x.split('K');
+                let d = y.split('K');
+                let e = parseFloat(c[0]);
+                let f = parseFloat(d[0]);
+                console.log(e,f)
+                return f-e;
+            })
+        }
     const dataContainer = document.getElementById('data-container');
     const nullContainer = document.getElementById('null-container');
     nullContainer.textContent = '';
@@ -38,6 +54,7 @@ const getDetails = async (categories) => {
         nullContainer.appendChild(div)
     }
     wholeData.forEach((data) => {
+        // console.log(data);
         const getTime = () => {
             const getSeconds = data.others.posted_date;
             const hours = parseInt(getSeconds / 3600);
@@ -66,6 +83,8 @@ const getDetails = async (categories) => {
        dataContainer.appendChild(div);
     })
 }
-
+const sortByView = () => {
+    getDetails(searchId,true);
+}
 clickHandler();
 getDetails('1000');
