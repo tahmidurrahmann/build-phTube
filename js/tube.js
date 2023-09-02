@@ -20,7 +20,6 @@ const getDetails = async (categories) => {
     const resp = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categories}`);
     const data = await resp.json();
     const wholeData = data.data;
-    console.log(wholeData)
     const dataContainer = document.getElementById('data-container');
     const nullContainer = document.getElementById('null-container');
     nullContainer.textContent = '';
